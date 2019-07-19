@@ -24,15 +24,12 @@ class MusiciensController
             "3" => "Skillet",
             "4" => "ABA",
             "5" => "Queen",
-            "6" => "Muse",
-            "7" => "Codplay",
-            "8" => "Mettalica",
-            "9" => "Scorpion",
         );
         for($x=0; $x <= 5; $x++) {
-            $rand = rand(1, 9);
-            $tabFinale[] = array("Musiciens" => $tabMusiciens[$rand],
-                                 "Groupes" => $tabGroupes[$rand]);
+            $randMusicien = rand(1, 9);
+            $randGroupe = rand(1,5);
+            $tabFinale[] = array("Musiciens" => $tabMusiciens[$randMusicien],
+                                 "Groupes" => $tabGroupes[$randGroupe]);
         }
         require ('views/musiciens.php');
 
