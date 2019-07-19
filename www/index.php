@@ -2,16 +2,12 @@
 
 use core\Routing;
 use controllers\TestController;
-//use controllers\UsersController;
+use controllers\MusiciensController;
 //use models\Users;
 //use vo\DbDriver;
-//
-//require "conf.inc.php";
-//
-function myAutoloader($class){
-//	$classPath = "core/".$class.".class.php";
-//	$classModel = "models/".$class.".class.php";
 
+//require "conf.inc.php";
+function myAutoloader($class){
     $classPath = str_replace('\\', DIRECTORY_SEPARATOR, $class).'.php';
     $classModel = str_replace('\\', DIRECTORY_SEPARATOR, $class).'.php';
 
@@ -31,16 +27,8 @@ $routes = Routing::getRoute($slug);
 extract($routes);
 
 $container = [
-//    'parameters' => [
-//        'db' => [
-//            'dbdriver' => 'test'
-//        ]
-//    ],
 //    Test::class => function () {
 //        return new Users();
-//    },
-//    DbDriver::class => function($container){
-//        return new DbDriver($container['parameters']['db']['dbdriver']);
 //    },
 //    UsersController::class => function ($container) {
 //        $users = $container[Users::class]();
@@ -48,6 +36,9 @@ $container = [
 //    },
     TestController::class => function () {
         return new TestController();
+    },
+    MusiciensController::class => function(){
+        return new MusiciensController();
     },
 ];
 

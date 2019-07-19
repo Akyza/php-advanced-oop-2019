@@ -1,24 +1,7 @@
-"/":
+"/test":
   controller: Test
   action: test
 
-"/liste_des_utilisateurs":
-  controller: Users
+"/":
+  controller: Musiciens
   action: default
-
-"/ajouter_un_utilisateur":
-  controller: Users
-  action: add
-
-
-"/enregistrer_un_utilisateur":
-  controller: Users
-  action: save
-
-"/connexion":
-  controller: Users
-  action: login
-
-"/mot_de_passe_oublie":
-  controller: Users
-  action: forgetPassword
